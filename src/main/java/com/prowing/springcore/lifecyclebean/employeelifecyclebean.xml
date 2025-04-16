@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <context:annotation-config/> <bean name="employee" class="com.prowing.springcore.lifecyclebean.Employee" 
+		init-method="init" destroy-method="destroy"> <property name="id" value="101"></property> 
+		<property name="name" value="yathrth"></property> </bean> <bean name="dept" 
+		class="com.prowing.springcore.lifecyclebean.Department"> <property name="deptNo" 
+		value="1011"></property> <property name="deptName" value="Data Science"></property> 
+		</bean> <bean name="project" class="com.prowing.springcore.lifecyclebean.Project"> 
+		<property name="duration" value="3 month"></property> <property name="projectName" 
+		value="ManitraPowerRoal"></property> </bean> -->
+
+	<bean name="address"
+		class="com.prowing.springcore.lifecyclebean.Address">
+		<property name="street" value="Sonawane wasti road"></property>
+		<property name="city" value="chikhali-pune"></property>
+	</bean>
+
+	<bean name="employee"
+		class="com.prowing.springcore.lifecyclebean.Employee"
+		autowire="constructor">
+		<property name="id" value="101"></property>
+		<property name="name" value="yathrth"></property>
+	</bean>
+	
+</beans>

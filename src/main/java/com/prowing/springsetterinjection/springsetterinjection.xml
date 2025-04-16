@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean name="temparayAddress"
+		class="com.prowing.springsetterinjection.TemparayAddress">
+	</bean>
+	<bean name="permanantAdress"
+		class="com.prowing.springsetterinjection.PermanantAdress">
+	</bean>
+	<bean class="com.prowing.springsetterinjection.Employee"
+		name="employee">
+		<property name="id" value="101"></property>
+		<property name="name" value="shital"></property>
+		<property name="address1" ref="temparayAddress"></property>
+	</bean>
+
+</beans>

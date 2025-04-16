@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/jdbc 
+        http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<!-- standalone list -->
+	<util:list list-class="java.util.LinkedList"
+		id="mybestfriends">
+		<value>Manoj</value>
+		<value>Akshita</value>
+		<value>Aaradhya</value>
+	</util:list>
+	<util:properties id="dBpro">
+		<prop key="driver">com.mysql.jdbc.Driver</prop>
+		<prop key="username">akshradhy</prop>
+		<prop key="password">akshita@2110</prop>
+
+
+	</util:properties>
+
+
+	<util:map map-class="java.util.TreeMap" id="fee">
+		<entry key="java core" value="10000"></entry>
+		<entry key="Advanced java" value="300000"></entry>
+		<entry key="web service" value="10000"></entry>
+	</util:map>
+
+
+	<bean name="person1"
+		class=" com.prowing.springcore.standalonecollection.Person">
+		<property name="friends" ref="mybestfriends"></property>
+		<property name="feeStructure" ref="fee"></property>
+		<property name="dBpro" ref="dBpro"></property>
+	</bean>
+
+
+</beans>
